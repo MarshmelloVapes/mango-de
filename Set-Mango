@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "Installing Requirements...\n"
+
+sudo pacman -S kitty bluez bluez-utils bluetui firefox ttf-jetbrains-mono-nerd neovim obsidian base-devel git curl nautilus yt-dlp mpv udisks2 fish starship
+
+sudo systemctl enable --now bluetooth.service
+
+echo "Creating DIR's...\n"
+sleep 4
+
+mkdir ~/.install
+mkdir ~/.scripts
+mkdir ~/Downloads
+mkdir ~/Documents
+mkdir ~/Videos
+mkdir ~/Pictures
+mkdir ~/.config
+
+echo "Installing YAY...\n"
+sleep 4
+
+cd ~/.install
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+echo "YAY Installed...\n"
+sleep 4
+
+cd ~/
+yay -Sy fuzzel mangowm-git mangobar-git xdg-desktop-portal-wlr swaybg wl-clip-persist cliphist wl-clipboard wlsunset xfce-polkit swaync pamixer wlr-dpms sway-audio-idle-inhibit-git swayidle dimland-git brightnessctl swayosd wlr-randr grim slurp satty swaylock-effects-git wlogout sox swaybg
+
+echo "All Installed... Copy The Configs and Home Files\n"
+sleep 4
