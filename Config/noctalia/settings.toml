@@ -1,0 +1,116 @@
+config_version = 16
+
+[bar.default]
+end = [
+    "tray",
+    "notifications",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session"
+]
+font_weight = 400
+margin_ends = 0
+radius = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
+radius_top_left = 0
+radius_top_right = 0
+shadow = false
+start = [ "wallpaper", "workspaces", "btn" ]
+thickness = 24
+
+[control_center]
+width = 660
+
+[lockscreen]
+transition = [ "honeycomb", "melt", "pixel" ]
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugins]
+enabled = [ "ezequiel/mango_layouts" ]
+
+[shell]
+avatar_path = "/home/josh/.config/backgrounds/s_c.png"
+
+    [shell.panel]
+    open_near_click_control_center = true
+
+[theme]
+mode = "auto"
+shell_mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    community_ids = [ "neovim" ]
+
+[wallpaper]
+directory = "/home/josh/.config/backgrounds"
+
+    [wallpaper.default]
+    path = "/home/josh/.config/backgrounds/background.png"
+
+    [wallpaper.last]
+    path = "/home/josh/.config/backgrounds/background.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/josh/.config/backgrounds/background.png"
+
+[widget.btn]
+color = "primary"
+icon_color = "primary"
+type = "ezequiel/mango_layouts:btn"
+
+[widget.clock]
+format = "{:%A - %b %d %H:%M}"
+
+[widget.tray]
+enabled = false
+
+[widget.workspaces]
+active_pill_size = 2.40
+occupied_color = "primary_container"
+pill_scale = 0.65
+show_all_outputs = true
