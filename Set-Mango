@@ -2,7 +2,7 @@
 
 echo "Installing Requirements...\n"
 
-sudo pacman -S kitty bluez bluez-utils bluetui firefox ttf-jetbrains-mono-nerd neovim obsidian base-devel git curl nautilus yt-dlp mpv udisks2 fish starship noctalia
+sudo pacman -S kitty bluez bluez-utils bluetui firefox ttf-jetbrains-mono-nerd neovim obsidian base-devel git curl nautilus yt-dlp mpv udisks2 fish starship noctalia noto-fonts
 
 sudo systemctl enable --now bluetooth.service
 
