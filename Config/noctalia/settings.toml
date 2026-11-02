@@ -648,7 +648,7 @@ umbriel_overview_type_to_launch_enabled = false
         variant = "destructive"
 
     [shell.shadow]
-    alpha = 0.55000001192092896
+    alpha = 0.0
     direction = "down"
 
     [shell.window_switcher]
