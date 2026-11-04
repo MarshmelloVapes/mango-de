@@ -23,23 +23,26 @@ order = [ "default" ]
     [bar.default]
     auto_hide = false
     auto_hide_delay_ms = 0
-    background_opacity = 1.0
+    background_opacity = 0.0
     border = "outline_variant"
     border_width = 0.0
-    capsule = false
-    capsule_border_width = 1.0
+    capsule = true
+    capsule_border_width = 0.0
     capsule_fill = "surface_container"
     capsule_group = []
     capsule_opacity = 1.0
-    capsule_padding = 6.0
-    capsule_thickness = 0.75999999046325684
+    capsule_padding = 8.0
+    capsule_radius = 8.0
+    capsule_thickness = 1.0
     center = [ "clock" ]
+    color = "primary"
     compositor_blur = true
     concave_edge_corners = true
     contact_shadow = false
     enabled = true
     end = [
         "tray",
+        "power_profile",
         "notifications",
         "clipboard",
         "network",
@@ -47,18 +50,18 @@ order = [ "default" ]
         "volume",
         "brightness",
         "battery",
-        "control-center",
         "session"
     ]
     font_family = "Noto Sans"
     font_scale = 1.0
     font_weight = 400
     hover_highlight = true
+    icon_color = "primary"
     layer = "top"
-    margin_edge = 0
+    margin_edge = 6
     margin_ends = 0
     margin_opposite_edge = 0
-    padding = 14
+    padding = 12
     panel_overlap = 1
     position = "top"
     radius = 0
@@ -72,9 +75,9 @@ order = [ "default" ]
     show_on_workspace_switch = true
     show_tooltip = true
     smart_auto_hide = false
-    start = [ "wallpaper", "workspaces", "btn", "screenshot" ]
+    start = [ "control-center", "wallpaper", "workspaces", "btn" ]
     thickness = 24
-    widget_spacing = 6
+    widget_spacing = 4
 
         [bar.default.dead_zone]
         click_through = false
@@ -84,7 +87,7 @@ warning_threshold = 10
 
 [bluetooth]
 connect_when_enabled = false
-connection_notifications = true
+connection_notifications = false
 
 [brightness]
 enable_ddcutil = false
@@ -120,6 +123,7 @@ width = 660
     hide_past_events = false
     past_events_threshold_minutes = 30
     show_events_card = true
+    show_events_location = false
     show_week_numbers = false
 
     [control_center.media]
@@ -157,9 +161,10 @@ active_monitor_only = false
 active_opacity = 1.0
 active_scale = 1.0
 auto_hide = false
-background_opacity = 0.87999999523162842
+background_opacity = 1.0
 border = "outline_variant"
 border_width = 0.0
+compositor_blur = true
 concave_edge_corners = true
 cross_axis_padding = 8
 enabled = false
@@ -185,7 +190,7 @@ radius_bottom_right = 16
 radius_top_left = 16
 radius_top_right = 16
 reserve_space = true
-shadow = true
+shadow = false
 show_dots = false
 show_instance_count = true
 show_running = true
@@ -415,6 +420,7 @@ scale = 1.0
     keyboard_layout = true
     lock_keys = true
     media = true
+    media_volume = true
     nightlight = true
     power_profile = true
     privacy = true
@@ -446,8 +452,8 @@ enabled = [ "ezequiel/mango_layouts", "prponkshe/mango-displays", "damian-ds7/ba
 [shell]
 app_icon_colorize = false
 avatar_path = "/home/josh/.config/backgrounds/s_c.png"
-button_borders = true
-card_borders = true
+button_borders = false
+card_borders = false
 clipboard_auto_paste = "auto"
 clipboard_confirm_clear_history = true
 clipboard_enabled = true
@@ -459,7 +465,7 @@ date_format = "%A, %x"
 disable_mipmaps = false
 external_ip_enabled = false
 font_family = "sans-serif"
-input_borders = true
+input_borders = false
 launch_apps_as_systemd_services = false
 launch_apps_custom_command = ""
 niri_overview_close_on_launch_enabled = false
@@ -467,8 +473,8 @@ niri_overview_type_to_launch_enabled = false
 offline_mode = false
 password_style = "default"
 polkit_agent = false
-popup_borders = true
-popup_shadows = true
+popup_borders = false
+popup_shadows = false
 readline_shortcuts = false
 screen_time_enabled = false
 settings_expand_all_groups = false
@@ -527,7 +533,7 @@ umbriel_overview_type_to_launch_enabled = false
     [shell.panel]
     border_color = "outline_variant"
     border_width = 1.0
-    borders = true
+    borders = false
     clipboard_placement = "floating"
     clipboard_position = "center"
     control_center_placement = "attached"
@@ -546,7 +552,7 @@ umbriel_overview_type_to_launch_enabled = false
     polkit_position = "center"
     session_placement = "attached"
     session_position = "auto"
-    shadow = true
+    shadow = false
     transparency_mode = "solid"
     wallpaper_placement = "attached"
     wallpaper_position = "auto"
@@ -714,7 +720,7 @@ wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
     builtin_ids = [ "mango" ]
-    community_ids = [ "neovim", "fastfetch" ]
+    community_ids = [ "fuzzel", "fastfetch" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -735,6 +741,7 @@ transition_on_startup = false
     enabled = false
     interval_seconds = 1800
     order = "random"
+    pause_on_fullscreen = false
     recursive = false
 
 [weather]
@@ -744,20 +751,34 @@ refresh_minutes = 30
 unit = "metric"
 
 [widget.active_window]
-icon_size = 14.0
+icon_size = 16.0
 max_length = 260.0
 min_length = 80.0
 title_scroll = "none"
 type = "active_window"
 
+[widget.bluetooth]
+enabled = false
+type = "bluetooth"
+
 [widget.btn]
 color = "primary"
 icon_color = "primary"
+show_text = true
 type = "ezequiel/mango_layouts:btn"
+update_interval = 310
+
+[widget.clipboard]
+enabled = false
+type = "clipboard"
 
 [widget.clock]
 format = "{:%A, %b %d - %H:%M}"
 type = "clock"
+
+[widget.control-center]
+glyph = "user"
+type = "control-center"
 
 [widget.cpu]
 stat = "cpu_usage"
@@ -798,6 +819,10 @@ type = "sysmon"
 stat = "net_tx"
 type = "sysmon"
 
+[widget.notifications]
+enabled = false
+type = "notifications"
+
 [widget.output_volume]
 device = "output"
 type = "volume"
@@ -810,6 +835,10 @@ type = "sysmon"
 font_scale = 0.48000000000000004
 scale = 0.55000000000000004
 type = "screenshot"
+
+[widget.session]
+enabled = false
+type = "session"
 
 [widget.spacer]
 interactive = false
